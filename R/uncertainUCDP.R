@@ -72,20 +72,20 @@ uncertainUCDP_parameters <- function(fatalities, tov){
 
 	if(tov == 'sb'){
 	loc <- expm1(stats::predict(internal_models$sb[[1]], newdata = data))
-	scale <- stats::predict(internal_models$sb[[2]], newdata = data)
-	w <- stats::predict(internal_models$sb[[3]], newdata = data)
+	scale <- exp(stats::predict(internal_models$sb[[2]], newdata = data))
+	w <- stats::predict(internal_models$sb[[3]], newdata = data, type = 'r')
 	}else if(tov == 'ns'){
 	loc <- expm1(stats::predict(internal_models$ns[[1]], newdata = data))
-	scale <- stats::predict(internal_models$ns[[2]], newdata = data)
-	w <- stats::predict(internal_models$ns[[3]], newdata = data)
+	scale <- exp(stats::predict(internal_models$ns[[2]], newdata = data))
+	w <- stats::predict(internal_models$ns[[3]], newdata = data, type = 'r')
 	}else if(tov == 'os'){
 	loc <- expm1(stats::predict(internal_models$os[[1]], newdata = data))
-	scale <- stats::predict(internal_models$os[[2]], newdata = data)
-	w <- stats::predict(internal_models$os[[3]], newdata = data)
+	scale <- exp(stats::predict(internal_models$os[[2]], newdata = data))
+	w <- stats::predict(internal_models$os[[3]], newdata = data, type = 'r')
 	}else if(tov == 'any'){
 	loc <- expm1(stats::predict(internal_models$any[[1]], newdata = data))
-	scale <- stats::predict(internal_models$any[[2]], newdata = data)
-	w <- stats::predict(internal_models$any[[3]], newdata = data)
+	scale <- exp(stats::predict(internal_models$any[[2]], newdata = data))
+	w <- stats::predict(internal_models$any[[3]], newdata = data, type = 'r')
 	}
 
 	return(list(loc = loc, scale = scale, w = w))
