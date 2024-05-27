@@ -36,8 +36,9 @@ uncertainUCDP_parameters <- function(fatalities, tov){
 		warning("tov = 'any' is somewhat experimental as it combines all types of violence into a single category. Use with caution")
 	}
 
-	if(fatalities < 0){
-		stop('fatalities must be a non-negative integer')
+	if(any(fatalities < 0)){
+		warning('fatalities must be non-negative integers, replacing negative values with NA')
+		fatalities[fatalities < 0] <- NA
 	}
 
 	if(fatalities != round(fatalities)){
