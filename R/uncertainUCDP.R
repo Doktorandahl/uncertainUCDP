@@ -41,7 +41,7 @@ uncertainUCDP_parameters <- function(fatalities, tov){
 		fatalities[fatalities < 0] <- NA
 	}
 
-	if(fatalities != round(fatalities)){
+	if(any(fatalities != round(fatalities))){
 		warning('fatalities should be an interger. Using non-integers may lead to unexpected results and should be considered experimental')
 	}
 
@@ -158,7 +158,7 @@ runcertainUCDP <- function(n, fatalities, tov = c('sb','ns','os','any')){
 
 	params <- uncertainUCDP_parameters(fatalities, tov)
 
-	gumbels <- mistr::rgumbel(n, params$loc, params$scale)
+	gumbels <- rgumbel(n, params$loc, params$scale)
 	rv_inflation <- stats::rbinom(n, 1, params$w)
 
 	return(gumbels * (1-rv_inflation) + fatalities * rv_inflation)
@@ -262,7 +262,13 @@ quantiles_unceartainUCDP <- function(probs, fatalities, tov = c('sb','ns','os','
 }
 
 
-
+rgumbel <- function (n, loc, scale){
+	if (any(scale <= 0)) {
+		warning("NaNs produced")
+		return(rep.int(NaN, n))
+	}
+	loc - scale * log(-log(runif(n)))
+}
 
 
 

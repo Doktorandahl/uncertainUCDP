@@ -1,7 +1,7 @@
 Package: uncertainUCDP
 Type: Package
 Title: Parametric mixture models for uncertainty estimation of fatalities in UCDP conflict data
-Version: 0.5.0
+Version: 0.5.2
 Description: This package provides functions for estimating uncertainty in the number of fatalities in the Uppsala Conflict Data Program (UCDP) data. The package implements a parametric reported-value Gumbel mixture distribution that accounts for the uncertainty in the number of fatalities in the UCDP data. The model is based on information from a survey on UCDP coders and how they view the uncertainty of the number of fatalities from UCDP events. The package provides functions for making random draws of fatalities from the mixture distribution, as well as to estimate percentiles, quantiles, means, and other statistics of the distribution. Full details on the survey and estimation procedure can be found in Vesco et al (2024).
 License: MIT + file LICENSE
 Encoding: UTF-8
