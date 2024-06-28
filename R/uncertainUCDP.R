@@ -267,7 +267,7 @@ rgumbel <- function (n, loc, scale){
 		warning("NaNs produced")
 		return(rep.int(NaN, n))
 	}
-	loc - scale * log(-log(runif(n)))
+	loc - scale * log(-log(stats::runif(n)))
 }
 
 
