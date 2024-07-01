@@ -6,11 +6,8 @@ Description: Provides functions for estimating uncertainty in the number of fata
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Authors@R: c(
-    person("David", "Randahl", , "david.randahl@pcr.uu.se", role = c("cre", "aut")),
-    person("Paola", "Vesco", role = "ctb"),
-    person("Håvard", "Hegre", role = "ctb")
-  )
+Authors@R: 
+    person("David", "Randahl", , "david.randahl@pcr.uu.se", role = c("cre", "aut"))
 Imports: 
     dplyr,
     mistr,

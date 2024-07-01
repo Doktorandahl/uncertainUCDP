@@ -11,11 +11,5 @@ Provides functions for estimating uncertainty in the number of fatalities in the
 \author{
 \strong{Maintainer}: David Randahl \email{david.randahl@pcr.uu.se}
 
-Other contributors:
-\itemize{
-  \item Paola Vesco [contributor]
-  \item Håvard Hegre [contributor]
-}
-
 }
 \keyword{internal}
