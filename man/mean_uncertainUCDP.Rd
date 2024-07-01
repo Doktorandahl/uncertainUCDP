@@ -4,7 +4,7 @@
 \alias{mean_uncertainUCDP}
 \alias{median_uncertainUCDP}
 \alias{quantiles_unceartainUCDP}
-\title{Function for calculating the mean, median, and quantiles of the parametric uncertainty distributions for UCDP events}
+\title{Mean, median, and quantiles of the parametric uncertainty distributions for UCDP events}
 \usage{
 mean_uncertainUCDP(fatalities, tov = c("sb", "ns", "os", "any"))
 
@@ -16,10 +16,11 @@ quantiles_unceartainUCDP(probs, fatalities, tov = c("sb", "ns", "os", "any"))
 \item{fatalities}{A vector of non-negative integers representing the number of fatalities of the UCDP events. Non-integer values are allowed but should be considered experimental.}
 
 \item{tov}{A character string representing the type of violence of the UCDP. Must be one of "sb", "ns", "os", or "any". The options are:
-- "sb" for state-based violence
-- "ns" for non-state violence
-- "os" for one-sided violence
-- "any" for parameters estimated across all type of violence. This is somewhat experimental and should be used with caution. This is possibly useful when the type of violence is unknown or when the user wants to combine all types of violence into a single category.}
+
+* "sb" for state-based violence
+* "ns" for non-state violence
+* "os" for one-sided violence
+* "any" for parameters estimated across all type of violence. This is somewhat experimental and should be used with caution. This is possibly useful when the type of violence is unknown or when the user wants to combine all types of violence into a single category.}
 
 \item{probs}{A numeric vector of probabilities with values in [0,1]. The quantiles to calculate.}
 }
@@ -27,7 +28,7 @@ quantiles_unceartainUCDP(probs, fatalities, tov = c("sb", "ns", "os", "any"))
 A numeric vector of the same length as the input vector of fatalities representing the means, medians, and quantiles of the parametric uncertainty distribution for each UCDP event.
 }
 \description{
-These fuctions calculate the mean, median, and quantiles of the parametric uncertainty distributions for UCDP events. The parametric uncertainty distributions are based on the reported-value inflation Gumbel mixture distribution. The \code{median} and \code{quantile} functions are shortcuts for the \code{quncertainUCDP} function.
+Mean, median, and quantiles of the parametric uncertainty distributions for UCDP events. The parametric uncertainty distributions are based on the reported-value inflation Gumbel mixture distribution. The \code{median} and \code{quantile} functions are shortcuts for the \code{quncertainUCDP} function.
 }
 \examples{
 

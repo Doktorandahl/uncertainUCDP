@@ -21,23 +21,24 @@ quncertainUCDP(p, fatalities, tov = c("sb", "ns", "os", "any"))
 \item{fatalities}{A vector of non-negative integers representing the number of fatalities of the UCDP events. Non-integer values are allowed but should be considered experimental.}
 
 \item{tov}{A character string representing the type of violence of the UCDP. Must be one of "sb", "ns", "os", or "any". The options are:
-- "sb" for state-based violence
-- "ns" for non-state violence
-- "os" for one-sided violence
-- "any" for parameters estimated across all type of violence. This is somewhat experimental and should be used with caution. This is possibly useful when the type of violence is unknown or when the user wants to combine all types of violence into a single category.}
+
+* "sb" for state-based violence
+* "ns" for non-state violence
+* "os" for one-sided violence
+* "any" for parameters estimated across all type of violence. This is somewhat experimental and should be used with caution. This is possibly useful when the type of violence is unknown or when the user wants to combine all types of violence into a single category.}
 
 \item{x, q}{Vector of quantiles}
 
 \item{p}{Vector of probabilities}
 }
 \value{
-- \code{duncertainUCDP} gives the density function
-- \code{puncertainUCDP} gives the distribution function
-- \code{quncertainUCDP} gives the quantile function
-- \code{runcertainUCDP} generates random values as a vector of length \code{n}
+* \code{duncertainUCDP} gives the density function
+* \code{puncertainUCDP} gives the distribution function
+* \code{quncertainUCDP} gives the quantile function
+* \code{runcertainUCDP} generates random values as a vector of length \code{n}
 }
 \description{
-Density, distribution function, quantile function and random generation for the parametric reported-value inflated Gumbel mixture distribution for UCDP events. The functions estimate the parameters of the distribution based on the number of fatalities and the type of violence of the UCDP event.
+Density, distribution, quantile and random number generation functions for the parametric reported-value inflated Gumbel mixture distribution for UCDP events. The functions estimate the parameters of the distribution based on the number of fatalities and the type of violence of the UCDP event.
 }
 \details{
 The reported-value inflated Gumbel mixture distribution is a parametric distribution for modeling the uncertainty in the number of fatalities of UCDP events. The distribution is a mixture of a Gumbel distribution and a point mass at the reported number of fatalities. The distribution is estimated based on the number of fatalities and the type of violence of the UCDP event. The distribution is estimated using a set of regression models that estimate the location, scale, and weight parameters of the distribution based on the number of fatalities and the type of violence of the UCDP event.
