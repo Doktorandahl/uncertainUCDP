@@ -258,7 +258,7 @@ median_uncertainUCDP <- function(fatalities, tov = c('sb', 'ns', 'os', 'any')) {
 
 #' @rdname mean_uncertainUCDP
 #' @export
-quantiles_uncertainUCDP <- function(
+quantile_uncertainUCDP <- function(
 	probs,
 	fatalities,
 	tov = c('sb', 'ns', 'os', 'any')
