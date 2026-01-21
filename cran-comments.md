@@ -6,3 +6,4 @@
 * Importing from mistr package removed; using internal gumbel functions instead
 * Fixing typo in function name: quantile_uncertainUCDP was misspelled as quantile_unceartainUCDP
 * Updated internal models to match latest version in Vesco et al (fothcoming)
+* Fixed functionality of the quncertainUCDP function to correctly compute quantiles for vectors of fatalities

@@ -183,17 +183,21 @@ quncertainUCDP <- function(p, fatalities, tov = c('sb', 'ns', 'os', 'any')) {
 	infliction_point <- pgumbel(fatalities, params$loc, params$scale) *
 		(1 - params$w)
 
-	if (p < infliction_point) {
-		return(qgumbel(p / (1 - params$w), params$loc, params$scale))
-	} else if (p <= params$w + infliction_point) {
-		return(fatalities)
-	} else if (p > params$w + infliction_point) {
-		return(qgumbel(
-			(p - params$w) / (1 - params$w),
-			params$loc,
-			params$scale
-		))
-	}
+	p_less_vec <- p < infliction_point
+	p_less_vec2 <- p <= params$w + infliction_point
+	res <- numeric(length(p))
+	res[p_less_vec] <- qgumbel(
+		p / (1 - params$w[p_less_vec]),
+		params$loc[p_less_vec],
+		params$scale[p_less_vec]
+	)
+	res[p_less_vec2 & !p_less_vec] <- fatalities[p_less_vec2 & !p_less_vec]
+	res[!p_less_vec2] <- qgumbel(
+		(p - params$w) / (1 - params$w),
+		params$loc[!p_less_vec2],
+		params$scale[!p_less_vec2]
+	)
+	return(res)
 }
 
 
