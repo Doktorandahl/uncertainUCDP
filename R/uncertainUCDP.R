@@ -257,7 +257,7 @@ mean_uncertainUCDP <- function(fatalities, tov = c('sb', 'ns', 'os', 'any')) {
 median_uncertainUCDP <- function(fatalities, tov = c('sb', 'ns', 'os', 'any')) {
 	params <- uncertainUCDP_parameters(fatalities, tov)
 
-	puncertainUCDP(0.5, fatalities, tov)
+	quncertainUCDP(0.5, fatalities, tov)
 }
 
 #' @rdname mean_uncertainUCDP
